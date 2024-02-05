@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(cors());
 
-mongoose.connect("process.env.Backend_Mongoose", {
+mongoose.connect(process.env.Backend_Mongoose, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
