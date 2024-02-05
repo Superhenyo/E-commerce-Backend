@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(cors());
 
-mongoose.connect("mongodb+srv://atinanemilb:admin123@cluster0.tncgjvc.mongodb.net/Capstone2_API_System?retryWrites=true&w=majority", {
+mongoose.connect("process.env.Backend_Mongoose", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
