@@ -2,14 +2,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require('dotenv')
+const path = require('path');
+
 
 const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product")
 
-dotenv.config({ path: 'C:/Users/chris/Desktop/Porfolio/Web Development/Bootcamp_capstone2_Render/Back End/.env.local' });
+const dotenvPath = path.join(process.cwd(), 'Back End', '.env.local');
+console.log('Current Working Directory:', process.cwd());
+console.log('Constructed dotenv path:', dotenvPath);
+dotenv.config({ path: path.join(__dirname, '.env.local') });
 
-console.log('After dotenv.config() - Backend_Mongoose:', process.env);
-console.log('After dotenv.config() - Backend_Mongoose:', process.env.Backend_Mongoose);
 
 const port = 4002;
 const app = express();
